@@ -6,10 +6,10 @@
    <tr style="background:lightyellow;">
    {% if not locator %}
       <td><span style="color:red;">Please provide subject<BR>contact details.</span>    
-      <A href="{{locator_add_url}}?next={{ subject_dashboard_url }}&dashboard_type={{ dashboard_type }}&dashboard_model={{ dashboard_model }}&dashboard_id={{ dashboard_id }}&show={{ show }}&registered_subject={{ registered_subject.pk }}&{{visit_attr}}={{ visit_model_instance.pk }}&visit_attr={{visit_attr}}">[ Add ]</A>
+      <A href="{{locator_add_url}}?next={{ subject_dashboard_url }}&dashboard_type={{ dashboard_type }}&dashboard_model={{ dashboard_model }}&dashboard_id={{ dashboard_id }}&show={{ show }}&instruction={{ instruction }}&registered_subject={{ registered_subject.pk }}&{{visit_attr}}={{ visit_model_instance.pk }}&visit_attr={{visit_attr}}">[ Add ]</A>
    {% else %}
        <td>
-       <A href="{{ locator_change_url }}?next={{ subject_dashboard_url }}&dashboard_type={{ dashboard_type }}&dashboard_model={{ dashboard_model }}&dashboard_id={{ dashboard_id }}&show={{ show }}&registered_subject={{ registered_subject.pk }}&{{visit_attr}}={{ visit_model_instance.pk }}&visit_attr={{visit_attr}}">[ Edit ]</A>
+       <A href="{{ locator_change_url }}?next={{ subject_dashboard_url }}&dashboard_type={{ dashboard_type }}&dashboard_model={{ dashboard_model }}&dashboard_id={{ dashboard_id }}&show={{ show }}&instruction={{ instruction }}&registered_subject={{ registered_subject.pk }}&{{visit_attr}}={{ visit_model_instance.pk }}&visit_attr={{visit_attr}}">[ Edit ]</A>
        <BR><b>May follow-up?</b> {{locator.may_follow_up }}       
        {% if locator.may_follow_up.lower == 'yes' %}   
             <BR><b>Home visits?</b> {{locator.home_visit_permission }}
