@@ -9,7 +9,7 @@ class SubjectLocatorFormValidator(FormValidator):
         self.validate_may_call_fields()
         self.validate_work_contact()
         self.validate_contact_details()
-        self.validate_indirect_cotanct()
+        self.validate_indirect_contact()
 
     def validate_work_contact(self):
         self.required_if(
@@ -31,7 +31,7 @@ class SubjectLocatorFormValidator(FormValidator):
         self.required_if(
             YES, field='contact_name', field_required='contact_physical_address')
 
-    def validate_indirect_cotanct(self):
+    def validate_indirect_contact(self):
         self.required_if(
             YES, field='may_contact_indirectly',
             field_required='indirect_contact_name')
