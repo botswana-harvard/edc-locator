@@ -7,7 +7,11 @@ class SubjectLocatorFormValidator(FormValidator):
 
     def clean(self):
         self.validate_may_call_fields()
+        self.validate_work_contact()
+        self.validate_contact_details()
+        self.validate_indirect_cotanct()
 
+    def validate_work_contact(self):
         self.required_if(
             YES, field='may_call_work', field_required='subject_work_place')
         self.not_required_if(
@@ -17,6 +21,7 @@ class SubjectLocatorFormValidator(FormValidator):
             NO, field='may_call_work',
             field_required='subject_work_cell', inverse=False)
 
+    def validate_contact_details(self):
         self.required_if(
             YES, field='home_visit_permission', field_required='physical_address')
         self.required_if(
@@ -26,6 +31,7 @@ class SubjectLocatorFormValidator(FormValidator):
         self.required_if(
             YES, field='contact_name', field_required='contact_physical_address')
 
+    def validate_indirect_cotanct(self):
         self.required_if(
             YES, field='may_contact_indirectly',
             field_required='indirect_contact_name')
